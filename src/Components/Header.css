@@ -1,9 +1,36 @@
-.header_container{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header_container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
     background: #000080;
     color: #ffffff;
-    height: 100px;    
-}
+    height: 175px;
+  }
+  
+  .image {
+    display: flex;
+    height: 150px;
+    width: 500px;
+    margin-right: 900px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  
+  .date {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 300px;
+    text-align: right;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-right: 25px;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
