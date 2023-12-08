@@ -1,10 +1,30 @@
 .home_logo{
     border: none;
-    margin-top: 30%;
-    margin-left: 57%;
+    margin-top: 8%;
+    margin-left: 60%;
 }
 
 .home_logo img{
     width: 600px;
     height: 200px;
 }
+
+.date {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 300px;
+    text-align: right;
+    margin-bottom: 25px;
+    margin-top: 20%;
+    margin-right: 2%;
+    margin-left: 78%;
+    font-size: 1.5em;
+    color: #454040;
+  }
+
+  .time{
+    font-size: 3em;
+    font-weight: bold;
+    color: #454040;
+  }
