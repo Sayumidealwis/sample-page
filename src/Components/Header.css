@@ -8,19 +8,13 @@
     flex-direction: row;
     background: #000080;
     color: #ffffff;
-    height: 175px;
-  }
-  
-  .image {
-    display: flex;
     height: 150px;
-    width: 500px;
-    margin-right: 900px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
   }
   
+  .page_name{
+    font-size: 2.5em;
+  }
+
   .date {
     display: flex;
     flex-direction: column;
@@ -29,8 +23,26 @@
     text-align: right;
     margin-bottom: 25px;
     margin-top: 25px;
-    margin-right: 25px;
-    font-size: 2.5em;
+    margin-right: 2%;
+    margin-left: 83%;
+    font-size: 1.25em;
     font-weight: bold;
+  }
+
+  .back_button{
+    position: absolute;
+    top: 37.5px;
+    left: 15px;
+    width: 75px;
+    height: 75px;
+    border-radius: 20%;
+    background: #ffffff;
+    cursor: pointer;
+    border: none;
+  }
+
+  .backimage img{
+    height: 50px;
+    width: 50px;
   }
   
