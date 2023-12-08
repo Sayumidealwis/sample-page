@@ -1,0 +1,10 @@
+.home_logo{
+    border: none;
+    margin-top: 30%;
+    margin-left: 57%;
+}
+
+.home_logo img{
+    width: 600px;
+    height: 200px;
+}
