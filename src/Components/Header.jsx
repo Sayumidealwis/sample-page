@@ -17,11 +17,13 @@ const Header = () => {
   return (
     <header>
     <div className="header_container">
-        <div className="image">
-            <img src="https://cdn.enfsolar.com/ID/logo/5e2674a1a7550.jpg?v=1" alt="cardImage"/>
-        </div>
-        <div className="date">{currentTime.toLocaleTimeString()}<br/>
-        {currentTime.toDateString()}
+    <button type="button" className="back_button">
+        <div className="backimage"><img src="https://www.svgrepo.com/show/101168/go-back-arrow.svg" alt="icon"/></div>
+    </button>
+    <div className="date">
+            <p className="page_name">HOME</p>
+            {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}  <br/>
+            {currentTime.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
     </div>
     </header>
