@@ -1,0 +1,15 @@
+.sidebar_container {
+  width: 200px;
+  height: 100vh;
+  background-color: black;
+}
+
+.top_section {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+}
+
+.mid_section {
+  padding: 20px;
+}
