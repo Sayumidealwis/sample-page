@@ -8,6 +8,7 @@ import AddTaskPage from './Pages/AddTaskPage'
 import ViewTaskPage from './Pages/ViewTaskPage'
 import HistoryTaskPage from './Pages/HistoryTask'
 
+
 function App() {
   return (
     <BrowserRouter>

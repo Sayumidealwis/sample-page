@@ -1,9 +1,43 @@
-.header_container{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header_container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
     background: #000080;
     color: #ffffff;
-    height: 100px;    
-}
+    height: 100px;
+  }
+  
+  .page_name{
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 300px;
+    text-align: right;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-right: 2%;
+    margin-left: 80%;
+    font-weight: bold;
+  }
+
+  .back_button{
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    background: #ffffff;
+    cursor: pointer;
+    border: none;
+  }
+
+  .backimage img{
+    height: 35px;
+    width: 35px;
+  }

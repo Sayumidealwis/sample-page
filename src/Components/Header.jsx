@@ -1,13 +1,17 @@
 import "./Header.css";
+import React from 'react';
 
-import React from 'react'
-
-function Header() {
+const Header = () => {
   return (
+    <header>
     <div className="header_container">
-        <h1>RIVIDCO PVT.LTD</h1>
+    <button type="button" className="back_button">
+        <div className="backimage"><img src="https://www.svgrepo.com/show/101168/go-back-arrow.svg" alt="icon"/></div>
+    </button>
+    <p className="page_name">HOME</p>
     </div>
-  )
-}
+    </header>
+  );
+};
 
-export default Header
+export default Header;
