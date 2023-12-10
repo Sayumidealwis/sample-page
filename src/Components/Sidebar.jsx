@@ -11,7 +11,7 @@ const Sidebar = () => {
 
     {
       path: '/tasklist',
-      name: 'Task Page',
+      name: 'Task List Page',
     },
 
     {
