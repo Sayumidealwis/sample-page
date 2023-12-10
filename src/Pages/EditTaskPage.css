@@ -1,0 +1,36 @@
+/* EditTaskPage.css */
+.edit-task-page {
+    width: 800px;
+    height: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(82, 134, 245);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-task-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: horizontal;
+  }
+  
+  /* Add more styles as needed */
+  
