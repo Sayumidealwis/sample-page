@@ -7,13 +7,14 @@ import EditTaskPage from './Pages/EditTaskPage'
 import AddTaskPage from './Pages/AddTaskPage'
 import ViewTaskPage from './Pages/ViewTaskPage'
 import HistoryTaskPage from './Pages/HistoryTask'
+import Header from './Components/Header'
 
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ display: 'flex' }}>
-        <Sidebar />
+      <div>
+        <Header/><Sidebar />
         <div>
           <Routes>
             <Route path="/" element={<HomePage />} />
