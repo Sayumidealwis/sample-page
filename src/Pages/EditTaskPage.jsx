@@ -7,7 +7,6 @@ const EditTaskPage = () => {
   }
   return (
     <div className="edit-task-page">
-      <h1>This is edit a task page</h1>
       <form>
         <label className="form-label">Description:</label>
         <input type="text" disabled/><br/><br/>
@@ -46,10 +45,10 @@ const EditTaskPage = () => {
         </select><br/><br/>
         
         <label className="form-label">Comment:</label>
-        <textarea cols={30} rows={10}></textarea>
+        <textarea cols={30} rows={10} required></textarea>
         <br/><br/>
 
-        <button type='submit'onClick={handlesubmit()}>Save</button>
+        <button className="form-button" type='submit'onSubmit={handlesubmit()}>Save</button>
       </form>
     </div>
   )
