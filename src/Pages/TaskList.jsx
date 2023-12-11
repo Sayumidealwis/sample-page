@@ -192,10 +192,7 @@ const Table = () => {
       <div>
         <div>
           <p className="title">Task List</p>
-          <p className="search-bar">
-            Filter By Added Date:{' '}
-            <input className="search" type="text" onChange={handleFilter} />
-          </p>
+          <p className="search-bar">Filter By Added Date: <input className="search" type="text" onChange={handleFilter} /></p>
         </div>
       </div>
       <div className="dataTable">
