@@ -62,7 +62,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 1',
         addedBy : 'Added By 1',
-        addedDate : 'Added Date 1',
+        addedDate : '2023-02-26',
         status : 'Active',
         assignTo : 'Assign To 1'
     },
@@ -71,7 +71,7 @@ const data = [
         category : 'Inquairy',
         requestedBy : 'Requested By 2',
         addedBy : 'Added By 2',
-        addedDate : 'Added Date 2',
+        addedDate : '2023-01-03',
         status : 'Active',
         assignTo : 'Assign To 2'
     },
@@ -80,7 +80,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 3',
         addedBy : 'Added By 3',
-        addedDate : 'Added Date 3',
+        addedDate : '2023-11-25',
         status : 'On Hold',
         assignTo : 'Assign To 3'
     },
@@ -89,7 +89,7 @@ const data = [
         category : 'Inquairy',
         requestedBy : 'Requested By 4',
         addedBy : 'Added By 4',
-        addedDate : 'Added Date 4',
+        addedDate : '2019-10-08',
         status : 'Active',
         assignTo : 'Assign To 4'
     },
@@ -98,7 +98,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 5',
         addedBy : 'Added By 5',
-        addedDate : 'Added Date 5',
+        addedDate : '2020-03-24',
         status : 'Active',
         assignTo : 'Assign To 5'
     },
@@ -107,7 +107,7 @@ const data = [
         category : 'Inquairy',
         requestedBy : 'Requested By 6',
         addedBy : 'Added By 6',
-        addedDate : 'Added Date 6',
+        addedDate : '2022-05-06',
         status : 'On Hold',
         assignTo : 'Assign To 6'
     },
@@ -116,7 +116,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 7',
         addedBy : 'Added By 7',
-        addedDate : 'Added Date 7',
+        addedDate : '2019-03-31',
         status : 'Active',
         assignTo : 'Assign To 7'
     },
@@ -125,7 +125,7 @@ const data = [
         category : 'Inquairy',
         requestedBy : 'Requested By 8',
         addedBy : 'Added By 8',
-        addedDate : 'Added Date 8',
+        addedDate : '2022-12-31',
         status : 'Active',
         assignTo : 'Assign To 8'
     },
@@ -134,7 +134,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 9',
         addedBy : 'Added By 9',
-        addedDate : 'Added Date 9',
+        addedDate : '2020-01-17',
         status : 'Active',
         assignTo : 'Assign To 9'
     },
@@ -143,7 +143,7 @@ const data = [
         category : 'Inquairy',
         requestedBy : 'Requested By 10',
         addedBy : 'Added By 10',
-        addedDate : 'Added Date 10',
+        addedDate : '2022-09-22',
         status : 'On Hold',
         assignTo : 'Assign To 10'
     },
@@ -152,7 +152,7 @@ const data = [
         category : 'Complain',
         requestedBy : 'Requested By 11',
         addedBy : 'Added By 11',
-        addedDate : 'Added Date 11',
+        addedDate : '2020-01-01',
         status : 'Active',
         assignTo : 'Assign To 11'
     }
@@ -164,7 +164,7 @@ const Table = () =>{
 
     function handleFilter(event){
         const Newdata = data.filter(row =>{
-            return row.status.toLowerCase().includes(event.target.value.toLowerCase())
+            return row.addedDate.toLowerCase().includes(event.target.value.toLowerCase())
         })
     setRecords(Newdata)
     }
@@ -189,11 +189,9 @@ const Table = () =>{
     return(
         <div className="container">
             <div>
-                <div className="search-bar">
-                    Filter By Status:  <input className="search" type="text" onChange={handleFilter}/>
-                </div>
-                <div className="title">
-                    <p>Task List</p>
+                <div>
+                    <p className="title">Task List</p>
+                    <p className="search-bar">Filter By Added Date:  <input className="search" type="text" onChange={handleFilter}/></p>
                 </div>
             </div>
             <div className="dataTable">
@@ -203,7 +201,6 @@ const Table = () =>{
                     pagination
                     highlightOnHover
 		            pointerOnHover
-                    theme="solarized"
                     customStyles={customStyles}
                 />
             </div>
