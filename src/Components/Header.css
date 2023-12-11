@@ -12,19 +12,19 @@
     width: 100vw;
   }
   
-  /* .page_name{
-    font-size: 3em;
+  .page_name{
+    font-size: 2.5em;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 300px;
+    width: 20vw;
     text-align: right;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
     margin-right: 2%;
-    margin-left: 80%;
+    margin-left: 80vw;
     font-weight: bold;
-  } */
+  }
 
   .back_button{
     position: absolute;
