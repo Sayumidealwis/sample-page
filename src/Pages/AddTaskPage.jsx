@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './AddTaskPage.css'
+import Header from '../Components/Header'
 
 const AddTaskPage = () => {
   const [description, setDescription] = useState('')
@@ -92,6 +93,8 @@ const AddTaskPage = () => {
   }
 
   return (
+    <div>
+    <Header currentPage="Add Task"/>
     <div className="addtaskpage_container">
       <tabel>
         <form className="addtaskpage_details">
@@ -296,6 +299,7 @@ const AddTaskPage = () => {
           </tr>
         </form>
       </tabel>
+    </div>
     </div>
   )
 }

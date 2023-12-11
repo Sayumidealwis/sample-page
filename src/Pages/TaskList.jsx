@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Task_style.css'
 import DataTable from 'react-data-table-component'
+import Header from '../Components/Header'
 
 const getColor = (status) => {
   switch (status.toLowerCase()) {
@@ -188,10 +189,12 @@ const Table = () => {
   }
 
   return (
+    <div>
+      <Header currentPage="Task List"/>
     <div className="container">
       <div>
         <div>
-          <p className="title">Task List</p>
+          {/* <p className="title">Task List</p> */}
           <p className="search-bar">Filter By Added Date: <input className="search" type="text" onChange={handleFilter} /></p>
         </div>
       </div>
@@ -205,6 +208,7 @@ const Table = () => {
           customStyles={customStyles}
         />
       </div>
+    </div>
     </div>
   )
 }

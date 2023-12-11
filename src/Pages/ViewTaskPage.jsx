@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from '../Components/Header'
 
 const ViewTaskPage = () => {
   return (
     <div>
-      <h1>This is view a task page</h1>
+      <Header currentPage="View Task"/>
+      {/* <h1>This is view a task page</h1> */}
     </div>
   )
 }

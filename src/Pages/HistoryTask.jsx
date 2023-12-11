@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from '../Components/Header'
 
 const HistoryTaskPage = () => {
   return (
     <div>
-      <h1>This is history task page</h1>
+      <Header currentPage="Task History"/>
+      {/* <h1>This is history task page</h1> */}
     </div>
   )
 }

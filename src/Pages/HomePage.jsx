@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./HomePage.css";
+import Header from '../Components/Header';
 
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
   }, []);
   return (
     <div>
+      <Header currentPage="Home"/>
       <div className='home_logo'>
         <img src='https://cdn.enfsolar.com/ID/logo/5e2674a1a7550.jpg?v=1' alt='cardImage'/>
       </div>

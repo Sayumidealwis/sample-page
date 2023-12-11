@@ -1,11 +1,14 @@
 import React from 'react'
 import './EditTaskPage.css'
+import Header from '../Components/Header';
 
 const EditTaskPage = () => {
   const handlesubmit =()=>{
     alert("task detail edited");
   }
   return (
+    <div>
+    <Header currentPage="Edit Task"/>
     <div className="edit-task-page">
       <form>
         <label className="form-label">Description:</label>
@@ -48,8 +51,9 @@ const EditTaskPage = () => {
         <textarea cols={30} rows={10} required></textarea>
         <br/><br/>
 
-        <button className="form-button" type='submit'onSubmit={handlesubmit()}>Save</button>
+        <button className="form-button" type='submit'onSubmit={handlesubmit}>Save</button>
       </form>
+    </div>
     </div>
   )
 }
