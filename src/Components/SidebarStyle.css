@@ -1,5 +1,5 @@
 .sidebar_container {
-  width: 17%;
+  width: 17vw;
   height: 100vh;
   background-color: steelblue;
   position: fixed;
@@ -11,7 +11,7 @@
 }
 
 .user_profile{
-  height: 100px;
+  height: 11vh;
   align-items: center;
   display: flex;
 }
@@ -20,20 +20,20 @@
   color: white;
   text-align: center;
   line-height: 1;
-  margin-top: 40px;
+  margin-top: 4vh;
   font-size: 20px;
 }
 
 .user p{
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
 }
 
 .user_profile img{
-  margin-top: 125px;
-  margin-left: 60px;
-  margin-bottom: 100px;
-  width: 125px;
-  height: 125px;
+  margin-top: 11vh;
+  margin-left: 3.7vw;
+  margin-bottom: 10vh;
+  width: 7vw;
+  height: 11.5vh;
   border-radius: 50%;
 }
 
@@ -52,16 +52,16 @@
 .link_text{
   padding: 0;
   margin: 0;
-  width: 250px;
+  width: 14vw;
   left: 0;
   text-align: center;
   border-radius: 15px 15px 15px 15px;
 }
 
 .logout{
-  margin-left: 30px;
+  margin-left: 2vw;
   padding: 10px 55px;
-  margin-top: 55%;
+  margin-top: 12vh;
   background-color: white;
   border: red;
   border-radius: 15px 15px 15px 15px;
