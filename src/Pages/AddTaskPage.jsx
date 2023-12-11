@@ -7,45 +7,139 @@ const AddTaskPage = () => {
   const [addedby, setAddedBy] = useState('')
   const [addeddate, setAddedDate] = useState('')
   const [requestedby, setRequestedBy] = useState('')
-  const [requesteddate, setRequestedDate] = useState('')
+  const [assignedto, setAssignedTo] = useState('')
   const [project, setProject] = useState('')
   const [status, setStatus] = useState('')
   const [comment, setComment] = useState('')
 
+  const [errors, setErrors] = useState({
+    Description: '',
+    Category: '',
+    Requested_By: '',
+    Status: '',
+    Comment: '',
+  })
+
+  const validateForm = () => {
+    let valid = true
+    const newErrors = {
+      Description: '',
+      Category: '',
+      Requested_By: '',
+      Status: '',
+      Comment: '',
+    }
+
+    if (!description.trim()) {
+      newErrors.Description = 'Please enter a description'
+      valid = false
+    }
+
+    if (!category) {
+      newErrors.Category = 'Please select a category'
+      valid = false
+    }
+
+    if (!requestedby) {
+      newErrors.Requested_By = 'Please select the customer'
+      valid = false
+    }
+
+    if (!status) {
+      newErrors.Status = 'Please select the status'
+      valid = false
+    }
+
+    if (!comment.trim()) {
+      newErrors.Comment = 'Please enter a comment'
+      valid = false
+    }
+
+    setErrors(newErrors)
+    return valid
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (validateForm()) {
+      window.alert('Validation success...')
+    } else {
+      window.alert('Validation Failed. Fill all the required fields...')
+    }
+  }
+
+  const handleClear = (e) => {
+    e.preventDefault()
+
+    setDescription('')
+    setCategory('')
+    setAddedBy('')
+    setAddedDate('')
+    setRequestedBy('')
+    setAssignedTo('')
+    setProject('')
+    setStatus('')
+    setComment('')
+
+    setErrors({
+      Description: '',
+      Category: '',
+      Requested_By: '',
+      Status: '',
+      Comment: '',
+    })
+  }
+
   return (
     <div className="addtaskpage_container">
-      <h1>Add a new CIA task</h1>
-
       <tabel>
-        <div className="addtaskpage_details">
+        <form className="addtaskpage_details">
           <tr>
-            <td>Description :</td>
+            <td>
+              Description
+              <span style={{ color: 'red', fontWeight: 'bold' }}> * </span> :
+            </td>
             <td>
               <textarea
                 name="description"
-                rows={10}
+                rows={5}
                 cols={80}
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={(e) => {
+                  setDescription(e.target.value)
+                  setErrors({ ...errors, Description: '' })
+                }}
               ></textarea>
             </td>
+            {errors.Description && (
+              <p className="error">{errors.Description}</p>
+            )}
           </tr>
           <tr>
-            <td> Catergory :</td>
+            <td>
+              {' '}
+              Catergory
+              <span style={{ color: 'red', fontWeight: 'bold' }}> * </span> :
+            </td>
             <td>
               <select
                 name="category"
                 value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => {
+                  setCategory(e.target.value)
+                  setErrors({ ...errors, Category: '' })
+                }}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
                 <option value="complaint">Complaint</option>
                 <option value="inquiry">Inquiry</option>
                 <option value="activity">Activity</option>
               </select>
             </td>
+            {errors.Category && <p className="error">{errors.Category}</p>}
           </tr>
           <tr>
             <td>AddedBy :</td>
@@ -55,98 +149,71 @@ const AddTaskPage = () => {
                 value={addedby}
                 onChange={(e) => setAddedBy(e.target.value)}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
-                <option value="addedby_1">Added By 1</option>
-                <option value="addedby_2">Added By 2</option>
-                <option value="addedby_3">Added By 3</option>
-                <option value="addedby_4">Added By 4</option>
-                <option value="addedby_5">Added By 5</option>
-                <option value="addedby_6">Added By 6</option>
-                <option value="addedby_7">Added By 7</option>
-                <option value="addedby_8">Added By 8</option>
-                <option value="addedby_9">Added By 9</option>
-                <option value="addedby_10">Added By 10</option>
-                <option value="addedby_11">Added By 11</option>
+                <option value="user_1">User 1</option>
+                <option value="user_2">User 2</option>
+                <option value="user_3">User 3</option>
+                <option value="user_4">User 4</option>
               </select>
             </td>
           </tr>
           <tr>
             <td>AddedDate :</td>
             <td>
-              <select
+              <input
+                type="date"
                 name="addeddate"
                 value={addeddate}
                 onChange={(e) => setAddedDate(e.target.value)}
-              >
-                <option disabled selected value="">
-                  Choose a value
-                </option>
-                <option value="addeddate_1">Added Date 1</option>
-                <option value="addeddate_2">Added Date 2</option>
-                <option value="addeddate_3">Added Date 3</option>
-                <option value="addeddate_4">Added Date 4</option>
-                <option value="addeddate_5">Added Date 5</option>
-                <option value="addeddate_6">Added Date 6</option>
-                <option value="addeddate_7">Added Date 7</option>
-                <option value="addeddate_8">Added Date 8</option>
-                <option value="addeddate_9">Added Date 9</option>
-                <option value="addeddate_10">Added Date 10</option>
-                <option value="addeddate_11">Added Date 11</option>
-              </select>
+              ></input>
             </td>
           </tr>
           <tr>
-            <td>Requested By :</td>
+            <td>
+              Requested By
+              <span style={{ color: 'red', fontWeight: 'bold' }}> * </span> :
+            </td>
             <td>
               <select
                 name="requestedby"
                 value={requestedby}
-                onChange={(e) => setRequestedBy(e.target.value)}
+                onChange={(e) => {
+                  setRequestedBy(e.target.value)
+                  setErrors({ ...errors, Requested_By: '' })
+                }}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
-                <option value="requestedby_1">Requested By 1</option>
-                <option value="requestedby_2">Requested By 2</option>
-                <option value="requestedby_3">Requested By 3</option>
-                <option value="requestedby_4">Requested By 4</option>
-                <option value="requestedby_5">Requested By 5</option>
-                <option value="requestedby_6">Requested By 6</option>
-                <option value="requestedby_7">Requested By 7</option>
-                <option value="requestedby_8">Requested By 8</option>
-                <option value="requestedby_9">Requested By 9</option>
-                <option value="requestedby_10">Requested By 10</option>
-                <option value="requestedby_11">Requested By 11</option>
+                <option value="customer_1">Customer 1</option>
+                <option value="customer_2">Customer 2</option>
+                <option value="customer_3">Customer 3</option>
+                <option value="customer_4">Customer 4</option>
               </select>
             </td>
-            <td>
-              <button>Add guest</button>
-            </td>
+            {errors.Requested_By && (
+              <p className="error">{errors.Requested_By}</p>
+            )}
           </tr>
+
           <tr>
-            <td>Requested Date :</td>
+            <td>Assigned To :</td>
             <td>
               <select
-                name="requesteddate"
-                value={requesteddate}
-                onChange={(e) => setRequestedDate(e.target.value)}
+                name="assignedto"
+                value={assignedto}
+                onChange={(e) => setAssignedTo(e.target.value)}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
-                <option value="requesteddate_1">Requested Date 1</option>
-                <option value="requesteddate_2">Requested Date 2</option>
-                <option value="requesteddate_3">Requested Date 3</option>
-                <option value="requesteddate_4">Requested Date 4</option>
-                <option value="requesteddate_5">Requested Date 5</option>
-                <option value="requesteddate_6">Requested Date 6</option>
-                <option value="requesteddate_7">Requested Date 7</option>
-                <option value="requesteddate_8">Requested Date 8</option>
-                <option value="requesteddate_9">Requested Date 9</option>
-                <option value="requesteddate_10">Requested Date 10</option>
-                <option value="requesteddate_11">Requested Date 11</option>
+                <option value="user_n">None</option>
+                <option value="user_1">User 1</option>
+                <option value="user_2">User 2</option>
+                <option value="user_3">User 3</option>
+                <option value="user_4">User 4</option>
               </select>
             </td>
           </tr>
@@ -158,33 +225,33 @@ const AddTaskPage = () => {
                 value={project}
                 onChange={(e) => setProject(e.target.value)}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
+                <option value="project_n">None</option>
                 <option value="project_1">Project 1</option>
                 <option value="project_2">Project 2</option>
                 <option value="project_3">Project 3</option>
                 <option value="project_4">Project 4</option>
-                <option value="project_5">Project 5</option>
-                <option value="project_6">Project 6</option>
-                <option value="project_7">Project 7</option>
-                <option value="project_8">Project 8</option>
-                <option value="project_9">Project 9</option>
-                <option value="project_10">Project 10</option>
-                <option value="project_11">Project 11</option>
               </select>
             </td>
           </tr>
           <tr>
-            <td>Status :</td>
+            <td>
+              Status
+              <span style={{ color: 'red', fontWeight: 'bold' }}> * </span> :
+            </td>
             <td>
               <select
                 name="status"
                 value={status}
-                onChange={(e) => setStatus(e.target.value)}
+                onChange={(e) => {
+                  setStatus(e.target.value)
+                  setErrors({ ...errors, Status: '' })
+                }}
               >
-                <option disabled selected value="">
-                  Choose a value
+                <option disabled hidden value="">
+                  Select an option
                 </option>
                 <option value="active">Active</option>
                 <option value="onhold">On Hold</option>
@@ -194,28 +261,40 @@ const AddTaskPage = () => {
                 <option value="done">Done</option>
               </select>
             </td>
+            {errors.Status && <p className="error">{errors.Status}</p>}
           </tr>
+
           <tr>
-            <td>Comment :</td>
+            <td>
+              Comment
+              <span style={{ color: 'red', fontWeight: 'bold' }}> * </span> :
+            </td>
             <td>
               <textarea
                 name="description"
                 rows={10}
                 cols={80}
                 value={comment}
-                onChange={(e) => setComment(e.target.value)}
+                onChange={(e) => {
+                  setComment(e.target.value)
+                  setErrors({ ...errors, Comment: '' })
+                }}
               ></textarea>
             </td>
+            {errors.Comment && <p className="error">{errors.Comment}</p>}
           </tr>
           <tr>
             <td></td>
-            <td></td>
-            <td>
-              <button>Save</button>
-              <button>Cancel</button>
+            <td className="button-class">
+              <button type="button" onClick={handleClear}>
+                Clear
+              </button>
+              <button type="submit" onClick={handleSubmit}>
+                Save
+              </button>
             </td>
           </tr>
-        </div>
+        </form>
       </tabel>
     </div>
   )
