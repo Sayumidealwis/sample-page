@@ -17,16 +17,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    float: right;
+    margin-left: 20px;
 }
 
 .search{
-    flex-direction: column;
-    height: 10px;
-    border: 1px solid;
     border-radius: 5px;
-    padding: 5px;
-    margin-left: 5px;
+    margin-left: 8px;
+    height: 25px;
 }
 
 .title{
