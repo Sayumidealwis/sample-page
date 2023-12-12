@@ -1,0 +1,30 @@
+.container_history{
+    padding-left: 18vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.dataaTable{
+    border: 2px solid #000000;
+    border-collapse: collapse;
+    border-style: solid;
+    text-align: center;
+    overflow-y: auto;
+    height: 100%;
+    width: 80%;
+    margin-top: 15vh;
+    margin-left: 2vh;
+}
+
+.history{font-weight: 500;}
+
+.addstatus{
+    margin-top: 10vh;
+    margin-left: 2vh;
+    margin-right: 3vh;
+    width: 50%;
+}
+
+.subbtn{
+    align-items: center;
+}
