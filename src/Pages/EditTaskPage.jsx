@@ -48,7 +48,7 @@ const EditTaskPage = () => {
         <textarea cols={30} rows={10} required></textarea>
         <br/><br/>
 
-        <button className="form-button" type='submit'onSubmit={handlesubmit()}>Save</button>
+        <button className="form-button" type='submit'onSubmit={handlesubmit}>Save</button>
       </form>
     </div>
   )
