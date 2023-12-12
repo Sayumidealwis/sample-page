@@ -93,8 +93,6 @@ const AddTaskPage = () => {
   }
 
   return (
-    <div>
-    <Header currentPage="Add Task"/>
     <div className="addtaskpage_container">
       <tabel>
         <form className="addtaskpage_details">
@@ -299,7 +297,6 @@ const AddTaskPage = () => {
           </tr>
         </form>
       </tabel>
-    </div>
     </div>
   )
 }
