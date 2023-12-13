@@ -4,6 +4,8 @@ import Header from '../Components/Header'
 import { useState } from 'react'
 
 const EditTaskPage = () => {
+  const [assignedto, setAssignedTo] = useState('')
+  const [status, setStatus] = useState('')
   const [comment, setComment] = useState('')
 
   const [errors, setErrors] = useState({
@@ -75,7 +77,11 @@ const EditTaskPage = () => {
           <br />
 
           <label className="form-label">Assigned To:</label>
-          <select>
+          <select
+            name="assignedto"
+            value={assignedto}
+            onChange={(e) => setAssignedTo(e.target.value)}
+          >
             <option>option 1</option>
             <option>option 2</option>
           </select>
@@ -83,7 +89,13 @@ const EditTaskPage = () => {
           <br />
 
           <label className="form-label">Status:</label>
-          <select required>
+          <select
+            name="status"
+            value={status}
+            onChange={(e) => {
+              setStatus(e.target.value)
+            }}
+          >
             <option>option 1</option>
             <option>option 2</option>
           </select>
