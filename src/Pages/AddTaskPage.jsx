@@ -274,7 +274,7 @@ const AddTaskPage = () => {
               </td>
               <td>
                 <textarea
-                  name="description"
+                  name="comment"
                   rows={10}
                   cols={80}
                   value={comment}
