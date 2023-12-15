@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/tasklist" element={<TaskList />} />
-            <Route path="/taskview" element={<ViewTaskPage />} />
+            <Route path="/taskview/:taskid" element={<ViewTaskPage />} />
             <Route path="/taskadd" element={<AddTaskPage />} />
             <Route path="/taskedit" element={<EditTaskPage />} />
             <Route path="/taskhistory" element={<HistoryTaskPage />} />
@@ -27,11 +27,6 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
-
-
-
-
-
   )
 }
 

@@ -6,7 +6,11 @@ const Header = ({ currentPage }) => {
   const navigate = useNavigate()
 
   const handleGoBack = () => {
-    navigate('/')
+    if (currentPage === 'View Task') {
+      navigate('/tasklist')
+    } else {
+      navigate('/')
+    }
   }
   return (
     <header>
