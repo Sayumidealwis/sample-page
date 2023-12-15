@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Task_style.css'
 import DataTable from 'react-data-table-component'
 import Header from '../Components/Header'
+import { useNavigate } from 'react-router-dom'
 
 const getColor = (status) => {
   switch (status.toLowerCase()) {
@@ -161,6 +162,7 @@ const data = [
 
 const Table = () => {
   const [records, setRecords] = useState(data)
+  const navigate = useNavigate()
 
   function handleFilter(event) {
     const Newdata = data.filter((row) => {
@@ -190,25 +192,32 @@ const Table = () => {
 
   return (
     <div>
-      <Header currentPage="Task List"/>
-    <div className="container">
-      <div>
+      <Header currentPage="Task List" />
+      <div className="container">
         <div>
-          {/* <p className="title">Task List</p> */}
-          <p className="search-bar">Filter By Added Date: <input className="search" type="text" onChange={handleFilter} /></p>
+          <div>
+            {/* <p className="title">Task List</p> */}
+            <p className="search-bar">
+              Filter By Added Date:{' '}
+              <input className="search" type="text" onChange={handleFilter} />
+            </p>
+          </div>
+        </div>
+        <div className="dataTable">
+          <DataTable
+            columns={column}
+            data={records}
+            pagination
+            highlightOnHover
+            pointerOnHover
+            customStyles={customStyles}
+            onRowClicked={(row) => {
+              const taskid = row.id
+              navigate(`/taskview/:${taskid}`)
+            }}
+          />
         </div>
       </div>
-      <div className="dataTable">
-        <DataTable
-          columns={column}
-          data={records}
-          pagination
-          highlightOnHover
-          pointerOnHover
-          customStyles={customStyles}
-        />
-      </div>
-    </div>
     </div>
   )
 }
